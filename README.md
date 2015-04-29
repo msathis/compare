@@ -1,0 +1,2 @@
+# compare
+Compare Folders Easily
