@@ -1,0 +1,75 @@
+<!--
+This example demonstrates how to set left and right editors using ajax.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" /><title>Compare - Diff View</title>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="description" content="Merge and Diff your documents with diff online and share" />
+	<meta name="keywords" content="diff,merge,compare,jsdiff,comparison,difference,file,text,unix,patch,algorithm,saas,longest common subsequence" />
+	<meta name="author" content="Jamie Peabody" />
+
+	<!-- Requires jQuery -->
+	<script>
+    window.$ = window.jQuery = require('./js/jquery-2.1.1.min.js');
+  </script>
+
+	<!-- CSS  -->
+	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="css/animate.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+	<!-- Requires CodeMirror -->
+	<script type="text/javascript" src="js/codemirror.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/codemirror.css" />
+
+	<!-- Requires Mergely -->
+	<script type="text/javascript" src="js/mergely.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/mergely.css" />
+
+	<script src="js/materialize.js"></script>
+	<script type="text/javascript" src="js/diff.js"></script>
+
+	<style type="text/css">
+		.collection-header.left , .collection-header.right {
+			width: 50%;
+			padding: 10px;
+			word-break: break-all;
+		}
+	</style>
+
+</head>
+<body style="width: 100%;">
+
+	<nav class="blue darken-1" role="navigation">
+		<div class="nav-wrapper container">
+				<div class="nav-item">
+					<input type="checkbox" id="ignorews" />
+					<label for="ignorews">Ignore Whitespace</label>
+				</div>
+				<div class="nav-item">
+					<i class="mdi-hardware-keyboard-arrow-up" id="prev-diff"></i>
+				</div>
+				<div class="nav-item">
+					<i class="mdi-hardware-keyboard-arrow-down" id="next-diff"></i>
+				</div>
+				<div class="nav-item right">
+					<a class="btn waves-effect waves-light green" id="button-save">Save</a>
+				</div>
+		</div>
+	</nav>
+
+	<div class="header">
+		<div class="collection-header left"></div>
+		<div class="collection-header right"></div>
+	</div>
+
+	<div id="mergely-resizer" style="height: 450px;">
+		<div id="compare">
+		</div>
+	</div>
+
+</body>
+</html>

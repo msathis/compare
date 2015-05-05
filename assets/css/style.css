@@ -1,0 +1,78 @@
+html, body, .content, .content .row {
+  height: 100%;
+  overflow: hidden;
+}
+
+.content .row {
+  overflow: scroll;
+}
+
+.content .row, .content .row .col {
+  min-height: 100%;
+}
+
+.left-bar .btn-floating, .right-bar .btn-floating{
+  margin: 0 auto;
+}
+
+.col.middle-bar {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.col.middle-bar .collection-item {
+  color: #fff;
+}
+
+.clear {
+  clear: both;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.results-list {
+  padding-bottom: 65px;
+}
+
+.preloader-wrapper {
+  margin: 0 auto;
+}
+
+.collection {
+  margin: 0;
+  border: none;
+}
+
+.preloader-wrapper.tiny {
+  height: 16px;
+  width: 16px;
+}
+
+.nav-item {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.nav-item label {
+  color: #eee;
+}
+
+[type="checkbox"] + label:before {
+    border-color: #eee;
+}
+
+[type="checkbox"]:checked + label:before {
+  border-right: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+}
+
+.secondary-content {
+  float: none;
+  color: #fff;
+}
