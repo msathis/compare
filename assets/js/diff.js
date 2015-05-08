@@ -46,6 +46,16 @@ $(document).ready(function () {
     $('#compare').mergely('scrollToDiff', 'prev');
   });
 
+  $('#move-to-right').click(function(){
+  	var rightTxt = $('#compare').mergely('get', 'rhs');
+  	$('#compare').mergely('lhs', rightTxt);
+  });
+
+  $('#move-to-left').click(function(){
+  	var leftTxt = $('#compare').mergely('get', 'lhs');
+  	$('#compare').mergely('rhs', leftTxt);
+  });
+
   $('#button-save').click(function() {
     var leftTxt = $('#compare').mergely('get', 'lhs');
     fs.writeFileSync(params.left, leftTxt, 'utf8');
