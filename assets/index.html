@@ -13,15 +13,15 @@
 <body>
     <nav class="blue darken-1" role="navigation">
       <div class="nav-wrapper container">
-          <div class="nav-item">
+          <div class="nav-item fadeIn hidden">
             <input type="checkbox" checked="checked" id="check-hidden-files" />
             <label for="check-hidden-files">Hidden Files</label>
           </div>
-          <div class="nav-item">
+          <div class="nav-item fadeIn hidden">
             <input type="checkbox" checked="checked" id="check-identical-files" />
             <label for="check-identical-files">Identical Files</label>
           </div>
-          <div class="nav-item right">
+          <div class="button-clear-wrap fadeIn nav-item right hidden">
             <a class="btn waves-effect waves-light red button-clear">Clear</a>
           </div>
       </div>
@@ -94,11 +94,28 @@
 
   </div>
 
+  <template id="spinner_template">
+    <div class="preloader-wrapper tiny active center-align">'
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </template>
+
   <!--  Scripts-->
   <script>
     window.$ = window.jQuery = require('./js/jquery-2.1.1.min.js');
   </script>
   <script src="js/materialize.js"></script>
+  <script src="js/compare.js"></script>
   <script src="js/init.js"></script>
 
   </body>

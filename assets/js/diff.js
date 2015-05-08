@@ -18,10 +18,18 @@ $(document).ready(function () {
     width: 'auto',
     height: 'auto', // containing div must be given a height
     lhs: function(setValue) {
-      setValue(fs.readFileSync(params.left,  "utf8"));
+      try {
+        setValue(fs.readFileSync(params.left,  "utf8"));
+      } catch (e) {
+        console.log('File not found..' + params.left);
+      }
     },
     rhs: function(setValue) {
-      setValue(fs.readFileSync(params.right,  "utf8"));
+      try {
+        setValue(fs.readFileSync(params.right,  "utf8"));
+      } catch (e) {
+        console.log('File not found..' + params.right);
+      }
     },
     cmsettings: { readOnly: false, lineWrapping: true },
   });
@@ -36,6 +44,15 @@ $(document).ready(function () {
 
   $('#prev-diff').click(function(){
     $('#compare').mergely('scrollToDiff', 'prev');
+  });
+
+  $('#button-save').click(function() {
+    var leftTxt = $('#compare').mergely('get', 'lhs');
+    fs.writeFileSync(params.left, leftTxt, 'utf8');
+    var rightTxt = $('#compare').mergely('get', 'rhs');
+    fs.writeFileSync(params.right, rightTxt, 'utf8');
+    window.opener.postMessage({type: 'refreshDiff', index: parseInt(params.index)}, 'file://');
+    alert('saved');
   });
 
 });
