@@ -12,5 +12,5 @@ You can clone this repo and run the code on your local machine.
 
   `` $ path/to/electron main.js ``
 
-  ### Known Issues
+### Known Issues
   1. Performance issue in folders with thousands of items [#1](https://github.com/msathis/compare/issues/1)
