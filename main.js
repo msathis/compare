@@ -1,14 +1,9 @@
-var app = require('app');  // Module to control application life.
-var BrowserWindow = require('browser-window');
-var Menu = require('menu');
-var MenuItem = require('menu-item');  // Module to create native browser window.
-
-// Report crashes to our server.
-require('crash-reporter').start();
+const electron = require('electron');
+const { app, BrowserWindow, Menu, MenuItem } = electron;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the javascript object is GCed.
-var mainWindow = null;
+let mainWindow = null;
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
@@ -33,7 +28,7 @@ app.on('ready', function() {
   Menu.setApplicationMenu(menu); //
 
   // and load the index.html of the app.
-  mainWindow.loadUrl('file://' + __dirname + '/assets/index.html');
+  mainWindow.loadURL('file://' + __dirname + '/assets/index.html');
 
   //Show when page is loaded
   mainWindow.show();
@@ -135,7 +130,7 @@ var template = [
       {
         label: 'Reload',
         accelerator: 'Command+R',
-        click: function() { BrowserWindow.getFocusedWindow().reloadIgnoringCache(); }
+        click: function() { BrowserWindow.getFocusedWindow().reload(); }
       },
       {
         label: 'Toggle DevTools',

@@ -1,9 +1,12 @@
 {
   "name"    : "compare",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "main"    : "main.js",
+  "engines" : {
+      "node" : ">=5"
+  },
   "dependencies": {
-    "checksum": "~0.1.1",
-    "fs-readdir-recursive": "~0.1.1"
+    "checksum": "^0.1.1",
+    "fs-readdir-recursive": "^1.0.0"
   }
 }

@@ -6,7 +6,7 @@ function searchToObject(search) {
   }, {})
 };
 
-var fs = require('remote').require('fs');
+var fs = require('fs');
 var params = searchToObject(window.location.search);
 
 $(document).ready(function () {
